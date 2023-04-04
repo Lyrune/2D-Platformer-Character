@@ -12,8 +12,8 @@ export var move_speed = 20
 export var max_move = 300
 
 export var jump_speed = 200
-export var max_jump = 1200
-
+export var max_jump = 350 
+export var jump_reset = true
 export var leap_speed = 200
 export var max_leap = 1200
 
@@ -33,7 +33,8 @@ func _physics_process(_delta):
 	if is_on_floor():
 		double_jumped = false
 		set_wall_raycasts(true)
-
+		jump_reset = true
+		
 func is_moving():
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
 		return true
@@ -81,4 +82,4 @@ func set_wall_raycasts(is_enabled):
 	$Wall/Right.enabled = is_enabled
 
 func die():
-	queue_free()
+	global_position = Vector2(200,250)

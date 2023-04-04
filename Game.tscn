@@ -1,56 +1,305 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Assets/[64x64] Dungeon Bricks Plain.png" type="Texture" id=1]
 [ext_resource path="res://Camera.gd" type="Script" id=2]
+[ext_resource path="res://Assets/[64x64] Dungeon Bricks Shadow.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Characters/character_0001.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Characters/character_0000.png" type="Texture" id=5]
+[ext_resource path="res://Enemy_Ground.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Characters/character_0025.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Characters/character_0024.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Characters/character_0026.png" type="Texture" id=9]
+[ext_resource path="res://Enemy_Flying.gd" type="Script" id=10]
 [ext_resource path="res://StateMachine/Player_Container.gd" type="Script" id=12]
 
-[sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
-[sub_resource type="OccluderPolygon2D" id=2]
-polygon = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+[sub_resource type="RectangleShape2D" id=12]
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 
 [sub_resource type="TileSet" id=4]
-0/name = "icon.png 0"
+0/name = "[64x64] Dungeon Bricks Plain.png 0"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 64, 64 )
+0/region = Rect2( 32, 0, 64, 64 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
-0/occluder = SubResource( 2 )
 0/navigation_offset = Vector2( 0, 0 )
-0/navigation = SubResource( 1 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 3 )
+0/shape = SubResource( 5 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
+1/name = "[64x64] Dungeon Bricks Shadow.png 1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 32, 0, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "[64x64] Dungeon Bricks Plain.png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 6 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "[64x64] Dungeon Bricks Plain.png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 128, 0, 64, 64 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 7 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "[64x64] Dungeon Bricks Plain.png 4"
+4/texture = ExtResource( 1 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 192, 192, 64, 64 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 8 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "[64x64] Dungeon Bricks Plain.png 5"
+5/texture = ExtResource( 1 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 192, 256, 64, 64 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 9 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
 
 [node name="Game" type="Node2D"]
 
 [node name="Player_Container" type="Node2D" parent="."]
 script = ExtResource( 12 )
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Enemy_Container" type="Node2D" parent="."]
+
+[node name="Enemy_Ground" type="KinematicBody2D" parent="Enemy_Container"]
+position = Vector2( 1058, 562 )
+script = ExtResource( 6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container/Enemy_Ground"]
+position = Vector2( 1, 2 )
+frames = SubResource( 10 )
+playing = true
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy_Container/Enemy_Ground"]
+position = Vector2( 0, -1 )
+polygon = PoolVector2Array( -10, -10, 12, -10, 12, 14, -10, 14 )
+
+[node name="Enemy_Ground2" type="KinematicBody2D" parent="Enemy_Container"]
+position = Vector2( 1841, 561 )
+script = ExtResource( 6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container/Enemy_Ground2"]
+position = Vector2( 1, 2 )
+frames = SubResource( 10 )
+playing = true
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy_Container/Enemy_Ground2"]
+polygon = PoolVector2Array( -10, -10, 12, -10, 12, 14, -10, 14 )
+
+[node name="Enemy_Ground3" type="KinematicBody2D" parent="Enemy_Container"]
+position = Vector2( 2052, 561 )
+script = ExtResource( 6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container/Enemy_Ground3"]
+position = Vector2( 1, 2 )
+frames = SubResource( 10 )
+playing = true
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy_Container/Enemy_Ground3"]
+polygon = PoolVector2Array( -10, -10, 12, -10, 12, 14, -10, 14 )
+
+[node name="Enemy_Ground4" type="KinematicBody2D" parent="Enemy_Container"]
+position = Vector2( 3021, 561 )
+script = ExtResource( 6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container/Enemy_Ground4"]
+position = Vector2( 1, 2 )
+frames = SubResource( 10 )
+frame = 1
+playing = true
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy_Container/Enemy_Ground4"]
+polygon = PoolVector2Array( -10, -10, 12, -10, 12, 14, -10, 14 )
+
+[node name="Enemy_Flying" type="KinematicBody2D" parent="Enemy_Container"]
+position = Vector2( 724, 153 )
+script = ExtResource( 10 )
+
+[node name="Area2D" type="Area2D" parent="Enemy_Container/Enemy_Flying"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Container/Enemy_Flying/Area2D"]
+scale = Vector2( 1.3, 0.95 )
+shape = SubResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container/Enemy_Flying"]
+frames = SubResource( 11 )
+playing = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy_Container/Enemy_Flying"]
+polygon = PoolVector2Array( -12, -9, 12, -9, 12, 9, -12, 9 )
+one_way_collision = true
+
+[node name="RayCast2D" type="RayCast2D" parent="Enemy_Container/Enemy_Flying"]
+enabled = true
+
+[node name="Enemy_Flying2" type="KinematicBody2D" parent="Enemy_Container"]
+position = Vector2( 1845, 7 )
+script = ExtResource( 10 )
+
+[node name="Area2D" type="Area2D" parent="Enemy_Container/Enemy_Flying2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Container/Enemy_Flying2/Area2D"]
+scale = Vector2( 1.3, 0.95 )
+shape = SubResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container/Enemy_Flying2"]
+frames = SubResource( 11 )
+frame = 2
+playing = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy_Container/Enemy_Flying2"]
+polygon = PoolVector2Array( -12, -9, 12, -9, 12, 9, -12, 9 )
+one_way_collision = true
+
+[node name="RayCast2D" type="RayCast2D" parent="Enemy_Container/Enemy_Flying2"]
+enabled = true
+
+[node name="Enemy_Flying3" type="KinematicBody2D" parent="Enemy_Container"]
+position = Vector2( 2983, 279 )
+script = ExtResource( 10 )
+
+[node name="Area2D" type="Area2D" parent="Enemy_Container/Enemy_Flying3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Container/Enemy_Flying3/Area2D"]
+scale = Vector2( 1.3, 0.95 )
+shape = SubResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container/Enemy_Flying3"]
+frames = SubResource( 11 )
+frame = 2
+playing = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy_Container/Enemy_Flying3"]
+polygon = PoolVector2Array( -12, -9, 12, -9, 12, 9, -12, 9 )
+one_way_collision = true
+
+[node name="RayCast2D" type="RayCast2D" parent="Enemy_Container/Enemy_Flying3"]
+enabled = true
+
+[node name="Ground" type="TileMap" parent="."]
 tile_set = SubResource( 4 )
+show_collision = true
 collision_use_kinematic = true
 collision_layer = 3
 collision_mask = 3
 format = 1
-tile_data = PoolIntArray( -720896, 0, 0, -720895, 0, 0, -720894, 0, 0, -720893, 0, 0, -720892, 0, 0, -720891, 0, 0, -720890, 0, 0, -720889, 0, 0, -720888, 0, 0, -720887, 0, 0, -720886, 0, 0, -720885, 0, 0, -720884, 0, 0, -720883, 0, 0, -720882, 0, 0, -720881, 0, 0, -720880, 0, 0, -720879, 0, 0, -720878, 0, 0, -720877, 0, 0, -720876, 0, 0, -720875, 0, 0, -720874, 0, 0, -720873, 0, 0, -720872, 0, 0, -720871, 0, 0, -720870, 0, 0, -720869, 0, 0, -720868, 0, 0, -720867, 0, 0, -720866, 0, 0, -720865, 0, 0, -720864, 0, 0, -720863, 0, 0, -720862, 0, 0, -720861, 0, 0, -720860, 0, 0, -720859, 0, 0, -720858, 0, 0, -720857, 0, 0, -720856, 0, 0, -720855, 0, 0, -720854, 0, 0, -720853, 0, 0, -720852, 0, 0, -720851, 0, 0, -720850, 0, 0, -720849, 0, 0, -720848, 0, 0, -720847, 0, 0, -720846, 0, 0, -720845, 0, 0, -720844, 0, 0, -720843, 0, 0, -720842, 0, 0, -720841, 0, 0, -720840, 0, 0, -720839, 0, 0, -720838, 0, 0, -655360, 0, 0, -655302, 0, 0, -589824, 0, 0, -589766, 0, 0, -524288, 0, 0, -524230, 0, 0, -458752, 0, 0, -458694, 0, 0, -393216, 0, 0, -393158, 0, 0, -327680, 0, 0, -327622, 0, 0, -262144, 0, 0, -262086, 0, 0, -196608, 0, 0, -196550, 0, 0, -131072, 0, 0, -131014, 0, 0, -65536, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65512, 0, 0, -65511, 0, 0, -65510, 0, 0, -65478, 0, 0, 0, 0, 0, 58, 0, 0, 65536, 0, 0, 65545, 0, 0, 65594, 0, 0, 131072, 0, 0, 131081, 0, 0, 131088, 0, 0, 131094, 0, 0, 131100, 0, 0, 131103, 0, 0, 131106, 0, 0, 131124, 0, 0, 131130, 0, 0, 196608, 0, 0, 196620, 0, 0, 196621, 0, 0, 196627, 0, 0, 196660, 0, 0, 196666, 0, 0, 262144, 0, 0, 262156, 0, 0, 262157, 0, 0, 262196, 0, 0, 262202, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327704, 0, 0, 327705, 0, 0, 327706, 0, 0, 327707, 0, 0, 327716, 0, 0, 327717, 0, 0, 327732, 0, 0, 327738, 0, 0, 393216, 0, 0, 393235, 0, 0, 393236, 0, 0, 393260, 0, 0, 393268, 0, 0, 393274, 0, 0, 458752, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458795, 0, 0, 458796, 0, 0, 458797, 0, 0, 458804, 0, 0, 458810, 0, 0, 524288, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 524317, 0, 0, 524318, 0, 0, 524330, 0, 0, 524331, 0, 0, 524332, 0, 0, 524333, 0, 0, 524334, 0, 0, 524346, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 589854, 0, 0, 589855, 0, 0, 589856, 0, 0, 589857, 0, 0, 589858, 0, 0, 589859, 0, 0, 589860, 0, 0, 589861, 0, 0, 589862, 0, 0, 589863, 0, 0, 589864, 0, 0, 589865, 0, 0, 589866, 0, 0, 589867, 0, 0, 589868, 0, 0, 589869, 0, 0, 589870, 0, 0, 589871, 0, 0, 589872, 0, 0, 589873, 0, 0, 589874, 0, 0, 589875, 0, 0, 589876, 0, 0, 589877, 0, 0, 589878, 0, 0, 589879, 0, 0, 589880, 0, 0, 589881, 0, 0, 589882, 0, 0 )
+tile_data = PoolIntArray( -720896, 0, 0, -720895, 0, 0, -720894, 0, 0, -720893, 0, 0, -720892, 0, 0, -720891, 0, 0, -720890, 0, 0, -720889, 0, 0, -720888, 0, 0, -720887, 0, 0, -720886, 0, 0, -720885, 0, 0, -720884, 0, 0, -720883, 0, 0, -720882, 0, 0, -720881, 0, 0, -720880, 0, 0, -720879, 0, 0, -720878, 0, 0, -720877, 0, 0, -720876, 0, 0, -720875, 0, 0, -720874, 0, 0, -720873, 0, 0, -720872, 0, 0, -720871, 0, 0, -720870, 0, 0, -720869, 0, 0, -720868, 0, 0, -720867, 0, 0, -720866, 0, 0, -720865, 0, 0, -720864, 0, 0, -720863, 0, 0, -720862, 0, 0, -720861, 0, 0, -720860, 0, 0, -720859, 0, 0, -720858, 0, 0, -720857, 0, 0, -720856, 0, 0, -720855, 0, 0, -720854, 0, 0, -720853, 0, 0, -720852, 0, 0, -720851, 0, 0, -720850, 0, 0, -720849, 0, 0, -720848, 0, 0, -720847, 0, 0, -720846, 0, 0, -720845, 0, 0, -720844, 0, 0, -720843, 0, 0, -720842, 0, 0, -720841, 0, 0, -720840, 0, 0, -720839, 0, 0, -720838, 0, 0, -655360, 5, 0, -655302, 5, 0, -589824, 5, 0, -589766, 5, 0, -524288, 5, 0, -524230, 5, 0, -458752, 5, 0, -458694, 5, 0, -393216, 5, 0, -393158, 5, 0, -327680, 5, 0, -327622, 5, 0, -262144, 5, 0, -262086, 5, 0, -196608, 5, 0, -196550, 5, 0, -131072, 5, 0, -131014, 5, 0, -65536, 5, 0, -65524, 2, 0, -65523, 0, 0, -65522, 3, 0, -65512, 2, 0, -65511, 0, 0, -65510, 3, 0, -65478, 5, 0, 0, 5, 0, 58, 5, 0, 65536, 5, 0, 65545, 4, 0, 65594, 5, 0, 131072, 5, 0, 131081, 5, 0, 131088, 4, 0, 131094, 4, 0, 131100, 4, 0, 131103, 4, 0, 131106, 4, 0, 131124, 4, 0, 131130, 5, 0, 196608, 5, 0, 196621, 4, 0, 196627, 4, 0, 196660, 5, 0, 196666, 5, 0, 262144, 5, 0, 262157, 5, 0, 262196, 5, 0, 262202, 5, 0, 327680, 5, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 3, 0, 327704, 2, 0, 327705, 0, 0, 327706, 0, 0, 327707, 3, 0, 327716, 2, 0, 327717, 3, 0, 327732, 5, 0, 327738, 5, 0, 393216, 5, 0, 393235, 2, 0, 393236, 3, 0, 393260, 4, 0, 393268, 5, 0, 393274, 5, 0, 458752, 5, 0, 458770, 2, 0, 458771, 0, 0, 458772, 0, 0, 458773, 3, 0, 458795, 2, 0, 458796, 0, 0, 458797, 3, 0, 458804, 5, 0, 458810, 5, 0, 524288, 5, 0, 524305, 2, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 3, 0, 524317, 2, 0, 524318, 3, 0, 524330, 2, 0, 524331, 0, 0, 524332, 0, 0, 524333, 0, 0, 524334, 3, 0, 524346, 5, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 589854, 0, 0, 589855, 0, 0, 589856, 0, 0, 589857, 0, 0, 589858, 0, 0, 589859, 0, 0, 589860, 0, 0, 589861, 0, 0, 589862, 0, 0, 589863, 0, 0, 589864, 0, 0, 589865, 0, 0, 589866, 0, 0, 589867, 0, 0, 589868, 0, 0, 589869, 0, 0, 589870, 0, 0, 589871, 0, 0, 589872, 0, 0, 589873, 0, 0, 589874, 0, 0, 589875, 0, 0, 589876, 0, 0, 589877, 0, 0, 589878, 0, 0, 589879, 0, 0, 589880, 0, 0, 589881, 0, 0, 589882, 5, 0 )
 
 [node name="Camera" type="Camera2D" parent="."]
 current = true
@@ -65,3 +314,7 @@ drag_margin_top = 0.1
 drag_margin_right = 0.1
 drag_margin_bottom = 0.1
 script = ExtResource( 2 )
+
+[connection signal="body_entered" from="Enemy_Container/Enemy_Flying/Area2D" to="Enemy_Container/Enemy_Flying" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Enemy_Container/Enemy_Flying2/Area2D" to="Enemy_Container/Enemy_Flying2" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Enemy_Container/Enemy_Flying3/Area2D" to="Enemy_Container/Enemy_Flying3" method="_on_Area2D_body_entered"]

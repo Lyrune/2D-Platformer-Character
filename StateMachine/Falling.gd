@@ -26,3 +26,7 @@ func physics_process(_delta):
 		
 	player.velocity += player.move_speed * player.move_vector() + player.gravity
 	player.move_and_slide(player.velocity, Vector2.UP)
+	
+	if Input.is_action_pressed("jump") and player.jump_reset == true:
+		SM.set_state("Jumping")
+		player.jump_reset = false
