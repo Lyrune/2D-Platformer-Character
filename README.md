@@ -13,9 +13,7 @@ The brick sprites was made by https://tilation.itch.io
 Enemy sprites made by Kenney at https://kenney.nl/assets/pixel-platformer
 
 ## Future Development
-
 None
 
 ## Created by 
-
-Jason Francis
+Keller McKean
