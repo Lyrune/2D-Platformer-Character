@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/[64x64] Dungeon Bricks Plain.png" type="Texture" id=1]
 [ext_resource path="res://Camera.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Characters/character_0024.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Characters/character_0026.png" type="Texture" id=9]
 [ext_resource path="res://Enemy_Flying.gd" type="Script" id=10]
+[ext_resource path="res://Assets/mus.ogg" type="AudioStream" id=11]
 [ext_resource path="res://StateMachine/Player_Container.gd" type="Script" id=12]
 
 [sub_resource type="SpriteFrames" id=10]
@@ -268,7 +269,6 @@ script = ExtResource( 6 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container/Enemy_Ground"]
 position = Vector2( 1, 2 )
 frames = SubResource( 10 )
-frame = 1
 playing = true
 flip_h = true
 
@@ -283,7 +283,6 @@ script = ExtResource( 6 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container/Enemy_Ground2"]
 position = Vector2( 1, 2 )
 frames = SubResource( 10 )
-frame = 1
 playing = true
 flip_h = true
 
@@ -297,7 +296,6 @@ script = ExtResource( 6 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container/Enemy_Ground3"]
 position = Vector2( 1, 2 )
 frames = SubResource( 10 )
-frame = 1
 playing = true
 flip_h = true
 
@@ -311,6 +309,7 @@ script = ExtResource( 6 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container/Enemy_Ground4"]
 position = Vector2( 1, 2 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 flip_h = true
 
@@ -329,6 +328,7 @@ shape = SubResource( 12 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container/Enemy_Flying"]
 frames = SubResource( 11 )
+frame = 1
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy_Container/Enemy_Flying"]
@@ -350,7 +350,6 @@ shape = SubResource( 12 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container/Enemy_Flying2"]
 frames = SubResource( 11 )
-frame = 2
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy_Container/Enemy_Flying2"]
@@ -372,7 +371,6 @@ shape = SubResource( 12 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container/Enemy_Flying3"]
 frames = SubResource( 11 )
-frame = 2
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy_Container/Enemy_Flying3"]
@@ -426,6 +424,10 @@ format = 1
 tile_data = PoolIntArray( -196511, 0, 0, -130975, 1, 0, -65439, 1, 0, 33, 0, 0, 65, 0, 0, 97, 1, 0, 65542, 0, 0, 65569, 1, 0, 65592, 0, 0, 65595, 0, 0, 65601, 1, 0, 65633, 1, 0, 131078, 1, 0, 131105, 1, 0, 131128, 1, 0, 131131, 1, 0, 131137, 1, 0, 131169, 1, 0, 196614, 1, 0, 196641, 1, 0, 196664, 1, 0, 196667, 1, 0, 196673, 1, 0, 196705, 1, 0, 262150, 1, 0, 262177, 1, 0, 262194, 0, 0, 262200, 1, 0, 262203, 1, 0, 262209, 1, 0, 262241, 1, 0, 327686, 1, 0, 327713, 1, 0, 327730, 1, 0, 327745, 1, 0, 327777, 1, 0, 393222, 1, 0, 393249, 1, 0, 393266, 1, 0, 393270, 0, 0, 393277, 0, 0, 393281, 1, 0, 393299, 0, 0, 393313, 1, 0, 458758, 1, 0, 458785, 1, 0, 458802, 1, 0, 458807, 3, 0, 458808, 4, 0, 458809, 4, 0, 458810, 4, 0, 458811, 4, 0, 458812, 2, 0, 458817, 1, 0, 458835, 1, 0, 458849, 1, 0, 524294, 1, 0, 524321, 1, 0, 524338, 1, 0, 524353, 1, 0, 524371, 1, 0, 524385, 1, 0, 589830, 1, 0, 589857, 1, 0, 589874, 1, 0, 589889, 1, 0, 589907, 1, 0, 589921, 1, 0, 655366, 1, 0, 655377, 0, 0, 655393, 1, 0, 655410, 1, 0, 655425, 1, 0, 655443, 1, 0, 655457, 1, 0, 720902, 1, 0, 720913, 1, 0, 720929, 1, 0, 720946, 1, 0, 720961, 1, 0, 720979, 1, 0, 720993, 1, 0, 786438, 1, 0, 786449, 1, 0, 786465, 1, 0, 786482, 1, 0, 786497, 1, 0, 786515, 1, 0, 786529, 1, 0, 851974, 1, 0, 851985, 1, 0, 852001, 1, 0, 852018, 1, 0, 852033, 1, 0, 852051, 1, 0, 852065, 1, 0, 917510, 1, 0, 917521, 1, 0, 917537, 1, 0, 917554, 1, 0, 917569, 1, 0, 917587, 1, 0, 917601, 1, 0, 983046, 1, 0, 983057, 1, 0, 983073, 1, 0, 983090, 1, 0, 983105, 1, 0, 983123, 1, 0, 983137, 1, 0, 1048582, 1, 0, 1048593, 1, 0, 1048609, 1, 0, 1048626, 1, 0, 1048641, 1, 0, 1048659, 1, 0, 1048673, 1, 0, 1114118, 1, 0, 1114129, 1, 0, 1114145, 1, 0, 1114162, 1, 0, 1114177, 1, 0, 1114195, 1, 0, 1114209, 1, 0, 1179654, 1, 0, 1179665, 1, 0 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
 
 [connection signal="body_entered" from="Enemy_Container/Enemy_Flying/Area2D" to="Enemy_Container/Enemy_Flying" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Enemy_Container/Enemy_Flying2/Area2D" to="Enemy_Container/Enemy_Flying2" method="_on_Area2D_body_entered"]

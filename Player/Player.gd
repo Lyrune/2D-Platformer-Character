@@ -82,4 +82,5 @@ func set_wall_raycasts(is_enabled):
 	$Wall/Right.enabled = is_enabled
 
 func die():
+	$ded.play()
 	global_position = Vector2(200,250)
